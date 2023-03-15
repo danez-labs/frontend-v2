@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
-import { isString } from "./_typeguards";
-import { getLogger, InputError, handleErrorCondition } from "./_utils";
-import { SUPPORTED_CG_BASE_CURRENCIES } from "./_constants";
+import { isString } from "../helpers/_typeguards";
+import { getLogger, InputError, handleErrorCondition } from "../helpers/_utils";
+import { SUPPORTED_CG_BASE_CURRENCIES } from "../helpers/_constants";
 import { HandlerEvent } from "@netlify/functions";
 
 import { coingecko, relayFeeCalculator } from "@across-protocol/sdk-v2";

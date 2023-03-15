@@ -1,19 +1,31 @@
 [[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "strict-origin"
-    Permissions-Policy = '''
-    geolocation=(self), 
+for = "/*"
+[headers.values]
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+Referrer-Policy = "strict-origin"
+Permissions-Policy = '''
+    geolocation=(self),
     microphone=()'''
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
+from = "/api/*"
+to = "/.netlify/functions/:splat"
+status = 200
 [functions]
-  directory = "api-migration"
-  node_bundler = "esbuild"
-  external_node_modules = ["@google-cloud/logging", "@uma/contracts-node", "@across-protocol/sdk-v2"]
-  included_files = ["src/data/*.json", "node_modules/**"]
+directory = "api-migration"
+node_bundler = "esbuild"
+external_node_modules = [
+  "@google-cloud/logging",
+  "@across-protocol/sdk-v2",
+  "@uma/contracts-node",
+]
+included_files = [
+  "src/data/*.json",
+  "node_modules/ethers/**",
+  "node_modules/@ethersproject/**",
+  "node_modules/js-sha3/**",
+  "node_modules/aes-js/**",
+  "node_modules/scrypt-js/**",
+  "node_modules/bech32/**",
+]

@@ -14,7 +14,7 @@ import enabledGoerliRoutesAsJson from "../src/data/routes_5_0xA44A832B994f796452
 import { maxRelayFeePct, relayerFeeCapitalCostConfig } from "./_constants";
 import { StaticJsonRpcProvider } from "@ethersproject/providers";
 import QueryBase from "@across-protocol/sdk-v2/dist/relayFeeCalculator/chain-queries/baseQuery";
-import { NetlifyResponse } from "./coingecko";
+import { NetlifyResponse } from "../api-migration/coingecko";
 
 type LoggingUtility = sdk.relayFeeCalculator.Logger;
 
