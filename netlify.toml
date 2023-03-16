@@ -14,6 +14,8 @@ to = "/.netlify/functions/:splat"
 status = 200
 [functions]
 directory = "api-migration"
+
+[functions.coingecko]
 node_bundler = "esbuild"
 external_node_modules = [
   "@google-cloud/logging",
@@ -22,6 +24,7 @@ external_node_modules = [
 ]
 included_files = [
   "src/data/*.json",
+  "node_modules/@across-protocol/sdk-v2/**",
   "node_modules/ethers/**",
   "node_modules/@ethersproject/**",
   "node_modules/js-sha3/**",
